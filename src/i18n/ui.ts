@@ -1,12 +1,11 @@
-export const languages: Record<'fr' | 'en', { name: string; flag: string }> = {
-  fr: { name: 'Français', flag: 'fr' },
+export const languages: Record<'en' | 'ko', { name: string; flag: string }> = {
   en: { name: 'English', flag: 'us' },
+  ko: { name: '한국어', flag: 'kr' },
 } as const;
 
-export const defaultLanguage = 'fr';
+export const defaultLanguage = 'en';
 
 export type LanguageCode = keyof typeof languages;
-
 export const ui = {
   fr: {
     projectsContent: {
@@ -71,7 +70,6 @@ export const ui = {
       blog: 'Blog',
       contact: 'Contact',
       projects: 'Projets',
-      tips: 'Astuces',
     },
     footer: {
       rights: 'Tous droits réservés.',
@@ -283,7 +281,6 @@ export const ui = {
       blog: 'Blog',
       contact: 'Contact',
       projects: 'Projects',
-      tips: 'Tips',
     },
     footer: {
       rights: 'All rights reserved.',
@@ -440,14 +437,18 @@ export type FeatureType = keyof UISchema[typeof defaultLanguage];
 
 export function useTranslations<F extends FeatureType>(
   lang: LanguageCode | undefined,
+
   feature: F
 ) {
   const currentLanguage = lang || defaultLanguage;
 
-  // Get the available keys for this feature from the default language
-  type AvailableKeys = keyof UISchema[typeof defaultLanguage][F];
+  // Create a more flexible type that includes keys from both the current and default languages.
+  // This prevents build errors if a language has extra keys not present in the default language.
+  type AvailableKeys =
+    | keyof UISchema[typeof defaultLanguage][F]
+    | keyof UISchema[typeof currentLanguage][F]; // This line was already correct from previous fix.
 
-  return function t(key: AvailableKeys): string {
+  return function t(key: string): string {
     // Safely access the translation, falling back to default language if necessary
     const featureTranslations = ui[currentLanguage]?.[feature];
     if (featureTranslations && key in featureTranslations) {

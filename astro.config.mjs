@@ -45,8 +45,8 @@ export default defineConfig({
   ],
 
   i18n: {
-    locales: ['fr', 'en'],
-    defaultLocale: 'fr',
+    locales: ['en', 'ko'],
+    defaultLocale: 'en', // 이미 'en'으로 설정되어 있다면 변경할 필요 없음
     routing: {
       prefixDefaultLocale: false,
     },
