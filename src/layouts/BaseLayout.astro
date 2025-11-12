@@ -69,35 +69,15 @@ const languagesForSelector: Array<LanguageSelectorItem> =
     />
     <link
       rel="icon"
-      type="image/png"
-      href="/favicons/dark-mode/favicon-96x96.png"
-      sizes="96x96"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link
-      rel="icon"
       type="image/svg+xml"
       href="/favicons/light-mode/favicon.svg"
       media="(prefers-color-scheme: light)"
     />
     <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicons/dark-mode/favicon.svg"
-      media="(prefers-color-scheme: dark)"
-    />
-
-    <link
       rel="shortcut icon"
       href="/favicons/light-mode/favicon.ico"
       media="(prefers-color-scheme: light)"
     />
-    <link
-      rel="shortcut icon"
-      href="/favicons/dark-mode/favicon.ico"
-      media="(prefers-color-scheme: dark)"
-    />
-
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -105,49 +85,11 @@ const languagesForSelector: Array<LanguageSelectorItem> =
       media="(prefers-color-scheme: light)"
     />
     <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicons/dark-mode/apple-touch-icon.png"
-      media="(prefers-color-scheme: dark)"
-    />
-
-    <link
       rel="manifest"
       href="/favicons/light-mode/site.webmanifest"
       media="(prefers-color-scheme: light)"
     />
-    <link
-      rel="manifest"
-      href="/favicons/dark-mode/site.webmanifest"
-      media="(prefers-color-scheme: dark)"
-    />
 
-    <script is:inline>
-      const getInitialTheme = () => {
-        if (
-          typeof localStorage !== 'undefined' &&
-          localStorage.getItem('theme')
-        ) {
-          return localStorage.getItem('theme');
-        }
-        if (
-          window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches
-        ) {
-          return 'dark';
-        }
-        return 'light';
-      };
-      const theme = getInitialTheme();
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-      // Ensure localStorage is consistent if theme was derived from prefers-color-scheme
-      // or if localStorage was empty.
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('theme', theme);
-      }
-    </script>
     <title>{pageTitle || tSite('title')}</title>
 
     <link
@@ -167,11 +109,7 @@ const languagesForSelector: Array<LanguageSelectorItem> =
   <body class="h-[100dvh] bg-background font-sans antialiased flex flex-col">
     {/* Tailwind classes for the body */}
     <header class="hidden md:block">
-      <!-- passer aussi navItems mais sans le premier element dont le href === '/' -->
-      <Header
-        languagesForSelector={languagesForSelector}
-        navItems={navItems.filter((item) => item.href !== '/') as NavItem[]}
-      />
+      <Header languagesForSelector={languagesForSelector} navItems={navItems} />
     </header>
 
     <main
@@ -192,29 +130,27 @@ const languagesForSelector: Array<LanguageSelectorItem> =
       document.addEventListener('DOMContentLoaded', () => {
         const initializeAndRunMermaid = () => {
           if (typeof mermaid !== 'undefined') {
-            const isDarkMode =
-              document.documentElement.classList.contains('dark');
-            const mermaidTheme = isDarkMode ? 'dark' : 'default';
+            const mermaidTheme = 'default';
 
             let themeVars = {
-              fontFamily: '"Inter", sans-serif',
+              fontFamily: '"SUIT Variable", sans-serif',
               fontSize: '15px',
               // Base variables (light mode defaults)
-              primaryColor: isDarkMode ? '#3B0764' : '#F3EFFF', // Node background
-              primaryTextColor: isDarkMode ? '#F3F4F6' : '#1f2937', // Node text
-              primaryBorderColor: isDarkMode ? '#A78BFA' : '#9333ea', // Node border
-              lineColor: isDarkMode ? '#A78BFA' : '#7E22CE', // Edge lines
-              textColor: isDarkMode ? '#E5E7EB' : '#374151', // General text (like edge labels)
-              edgeLabelBackground: isDarkMode ? '#4B3264' : '#E9D5FF', // Background for edge labels
+              primaryColor: '#F3EFFF', // Node background
+              primaryTextColor: '#1f2937', // Node text
+              primaryBorderColor: '#9333ea', // Node border
+              lineColor: '#7E22CE', // Edge lines
+              textColor: '#374151', // General text (like edge labels)
+              edgeLabelBackground: '#E9D5FF', // Background for edge labels
               // Specific for sequence diagrams, etc. (can be expanded)
-              actorBkg: isDarkMode ? '#3B0764' : '#F3EFFF',
-              actorBorder: isDarkMode ? '#A78BFA' : '#9333ea',
-              labelBoxBkgColor: isDarkMode ? '#2e104f' : '#f7f2ff', // Background for loop/alt/opt boxes
-              labelTextColor: isDarkMode ? '#E5E7EB' : '#374151',
-              noteBkgColor: isDarkMode ? '#2a0f4a' : '#fbf7ff',
-              noteTextColor: isDarkMode ? '#E5E7EB' : '#374151',
-              clusterBkg: isDarkMode ? '#240a3c' : '#faf5ff',
-              clusterBorder: isDarkMode ? '#7c3aed' : '#a855f7',
+              actorBkg: '#F3EFFF',
+              actorBorder: '#9333ea',
+              labelBoxBkgColor: '#f7f2ff', // Background for loop/alt/opt boxes
+              labelTextColor: '#374151',
+              noteBkgColor: '#fbf7ff',
+              noteTextColor: '#374151',
+              clusterBkg: '#faf5ff',
+              clusterBorder: '#a855f7',
             };
 
             mermaid.initialize({
