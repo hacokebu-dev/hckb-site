@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import type { LanguageCode } from '@/i18n/ui';
-import { useTranslations } from '@/i18n/ui';
+import { useTranslations, defaultLanguage } from '@/i18n/ui';
 import { formatDate } from '@/lib/utils';
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
@@ -23,10 +23,13 @@ interface Props {
 
 const { post, lang } = Astro.props;
 const t = useTranslations(lang, 'blogPost');
+
+// Remove language prefix from post ID (e.g., 'en/example-post' -> 'example-post')
+const slugWithoutLang = post.id.replace(`${lang}/`, '');
 ---
 
 <a
-  href={getRelativeLocaleUrl(lang, `/blog/${post.id}`)}
+  href={getRelativeLocaleUrl(lang, `/blog/${slugWithoutLang}`)}
   class="block group rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 >
   <Card

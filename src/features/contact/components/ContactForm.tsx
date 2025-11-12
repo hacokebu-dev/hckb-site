@@ -43,7 +43,7 @@ export function ContactForm({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       firstName: '',
-      lastName: '',
+      // lastName: '',
       email: '',
       message: '',
     },

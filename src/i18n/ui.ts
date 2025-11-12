@@ -1,6 +1,6 @@
 export const languages: Record<'en' | 'ko', { name: string; flag: string }> = {
   en: { name: 'English', flag: 'us' },
-  ko: { name: '한국어', flag: 'kr' },
+  ko: { name: '한국어', flag: 'ko' },
 } as const;
 
 export const defaultLanguage = 'en';

@@ -27,9 +27,11 @@ const texts = useTranslations(lang, 'blogPage');
 function transformPostForClientFilter(
   post: AstroCollectionEntry<'blog'>
 ): PostDataForFilter {
+  // Remove language prefix from post ID (e.g., 'en/example-post' -> 'example-post')
+  const slugWithoutLang = post.id.replace(`${lang}/`, '');
   return {
     id: post.id,
-    slug: post.id ?? '',
+    slug: slugWithoutLang ?? '',
     title: post.data.title,
     description: post.data.description || '',
     tags: post.data.tags,

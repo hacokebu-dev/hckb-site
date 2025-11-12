@@ -1,7 +1,12 @@
 ---
 import { BlogPostDetailScreen } from '@/features/blog';
 import { type LanguageCode } from '@/i18n/ui';
-import { getCollection, getEntries, render, type CollectionEntry } from 'astro:content';
+import {
+  getCollection,
+  getEntries,
+  render,
+  type CollectionEntry,
+} from 'astro:content';
 
 let lang = 'ko' as LanguageCode;
 
@@ -13,10 +18,14 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog', ({ data }) => {
     return data.isDraft !== true && data.lang === 'ko';
   });
-  return blogEntries.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return blogEntries.map((post) => {
+    // Remove language prefix from ID (e.g., 'ko/example-post' -> 'example-post')
+    const slugWithoutLang = post.id.replace('ko/', '');
+    return {
+      params: { slug: slugWithoutLang },
+      props: { post },
+    };
+  });
 }
 
 const { post } = Astro.props;

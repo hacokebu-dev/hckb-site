@@ -58,7 +58,7 @@ export function LanguageSelector({
         >
           {currentLanguage ? (
             <img
-              src={`https://flagcdn.com/w20/${currentLanguage.flag}.png`}
+              src={`/flag/${currentLanguage.flag}.svg`}
               alt={`Drapeau ${currentLanguage.name}`}
               width={20}
               height={15}
@@ -82,7 +82,7 @@ export function LanguageSelector({
             disabled={isPending}
           >
             <img
-              src={`https://flagcdn.com/w20/${lang.flag}.png`}
+              src={`/flag/${lang.flag}.svg`}
               alt={`Drapeau ${lang.name}`}
               width={20}
               height={15}

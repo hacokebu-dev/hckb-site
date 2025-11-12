@@ -9,10 +9,14 @@ export async function getStaticPaths() {
   const blogEntries = await getCollection('blog', ({ data }) => {
     return data.isDraft !== true && data.lang === defaultLanguage;
   });
-  return blogEntries.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return blogEntries.map((post) => {
+    // Remove language prefix from ID (e.g., 'en/example-post' -> 'example-post')
+    const slugWithoutLang = post.id.replace(`${defaultLanguage}/`, '');
+    return {
+      params: { slug: slugWithoutLang },
+      props: { post },
+    };
+  });
 }
 const { post } = Astro.props;
 
