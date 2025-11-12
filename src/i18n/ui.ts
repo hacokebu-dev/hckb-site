@@ -7,219 +7,6 @@ export const defaultLanguage = 'en';
 
 export type LanguageCode = keyof typeof languages;
 export const ui = {
-  fr: {
-    projectsContent: {
-      sampleProject: {
-        title: 'Exemple de Projet',
-        description: "Ceci est un projet d'exemple pour le template.",
-        imageAltText: "Image placeholder pour le projet d'exemple",
-        categoryText: 'Application Web',
-        dateText: 'Janvier 2025',
-        detailedDescription:
-          "Une description plus détaillée de ce projet d'exemple, montrant comment structurer le contenu pour la page de détail du projet.",
-        keyFeatures: {
-          responsiveDesign: {
-            title: 'Design Adaptatif',
-            description: "Le projet s'adapte à toutes les tailles d'écran.",
-          },
-          contentManagement: {
-            title: 'Gestion de Contenu Facile',
-            description:
-              'Permet une gestion aisée du contenu via des fichiers Markdown ou un CMS.',
-          },
-        },
-        galleryImages: {
-          // sampleGalleryImage1: { // Si tu actives la galerie pour l'exemple
-          //   alt: "Texte alternatif pour l'image de galerie 1",
-          //   caption: "Légende pour l'image de galerie 1",
-          // },
-        },
-        challenges:
-          'Description des défis rencontrés lors de la création de ce projet exemple.',
-        learnings: 'Description des apprentissages tirés de ce projet exemple.',
-      },
-    },
-    skillsContent: {
-      frontendDevelopment: {
-        title: 'Développement Frontend',
-        description:
-          "Création d'interfaces utilisateur interactives et performantes.",
-      },
-      backendDevelopment: {
-        title: 'Développement Backend',
-        description: "Construction de logiques serveur robustes et d'API.",
-      },
-      uiUxDesign: {
-        title: 'Design UI/UX',
-        description:
-          "Conception d'expériences utilisateur intuitives et esthétiques.",
-      },
-      devOps: {
-        title: 'DevOps',
-        description:
-          'Automatisation des processus de développement et de déploiement.',
-      },
-    },
-    site: {
-      title: 'Mon Super Template',
-      description:
-        'Un template Astro moderne et performant pour démarrer votre projet.',
-    },
-    nav: {
-      home: 'Accueil',
-      blog: 'Blog',
-      contact: 'Contact',
-      projects: 'Projets',
-    },
-    footer: {
-      rights: 'Tous droits réservés.',
-    },
-    homePage: {
-      pageTitle: 'Accueil |  Développeur FullStack',
-      pageDescription:
-        "Bienvenue sur le portfolio de YOUR_NAME, développeur FullStack passionné par la création d'expériences web innovantes.",
-      heroGreeting: "Salut, c'est YOUR_NAME",
-      heroSubtitlePart1: 'Développeur FullStack',
-      heroSubtitlePart2: 'Passionné UI/UX',
-      heroIntroduction: 'Ajouter une introduction ici.',
-      heroViewWorkButton: 'Mes réalisations',
-      heroContactButton: 'Me contacter',
-      heroImageAlt:
-        'Illustration représentant YOUR_NAME ou un concept de développement',
-      featuredProjectsTitle: '3 derniers projets',
-      featuredProjectsDescription:
-        "Voici quelques projets sur lesquels j'ai récemment travaillé. N'hésitez pas à les explorer !",
-      projectCardViewProject: 'Voir le projet',
-      projectCardViewCode: 'Voir le code',
-      imageNotAvailable: 'Image bientôt disponible',
-      mySkillsTitle: 'Mes Compétences',
-      mySkillsDescription:
-        "Explorez l'expertise et les capacités qui définissent mon travail et ma passion.",
-    },
-    blogPage: {
-      pageTitle: 'Mon Blog Technique',
-      pageDescription:
-        "Articles et réflexions sur le développement web, l'architecture logicielle, et les nouvelles technologies.",
-      title: 'Mon Blog Technique',
-      description:
-        "Articles et réflexions sur le développement web, l'architecture logicielle, et les nouvelles technologies.",
-      comingSoon:
-        'Les articles de blog apparaîtront ici bientôt. Revenez plus tard !',
-      heroImageAlt: "Image de couverture pour l'article : ",
-      publishedOn: 'Publié le : ',
-      readMore: 'Lire la suite',
-      readingTimeSuffix: 'min de lecture',
-      searchPlaceholder: 'Rechercher des articles...',
-      filterByTagButtonLabel: 'Filtrer par tag',
-      noTagFound: 'Aucun tag trouvé.',
-      selectTagCommandPlaceholder: 'Rechercher un tag...',
-      allTagsLabel: 'Tous les tags',
-      noPostsFound: 'Aucun article trouvé.',
-    },
-    blogPost: {
-      publishedOn: 'Publié le : ',
-      updatedOn: 'Mis à jour le : ',
-      heroImageAlt: "Image de couverture pour l'article : ",
-      backToList: 'Retour à la liste des articles',
-      readingTimeSuffix: 'min de lecture',
-      relatedPostsTitle: 'Je te recommande aussi :',
-      readMore: 'Lire la suite',
-      editOnGithub: 'Proposer une modification sur GitHub',
-    },
-    toc: {
-      title: "Sommaire de l'article",
-    },
-    contactPage: {
-      pageTitle: 'Me Contacter',
-      pageDescription:
-        "Discutons de ton projet, d'une collaboration potentielle, ou simplement pour échanger sur la tech !",
-      title: 'Me Contacter',
-      description:
-        "Discutons de ton projet, d'une collaboration potentielle, ou simplement pour échanger sur la tech !",
-
-      formTitle: 'Envoyer un message',
-      firstNameLabel: 'Prénom',
-      lastNameLabel: 'Nom',
-      emailLabel: 'Email',
-      messageLabel: 'Message',
-      sendButtonLabel: 'Envoyer',
-      firstNamePlaceholder: 'Ton prénom',
-
-      lastNamePlaceholder: 'Ton nom de famille',
-      emailPlaceholder: 'Ton adresse e-mail',
-      messagePlaceholder: 'Ton message ici...',
-      calendarTitle: 'Planifier un RDV',
-      calendarDescription:
-        'Tu préfères discuter de vive voix ? Réservez directement un créneau dans mon agenda.',
-      calendarButtonLabel: 'Voir mes disponibilités',
-      calendarLinkLabel: 'Voir mon agenda',
-      calendarPlaceHolder:
-        "L'intégration avec Google Calendar se fera bientôt...",
-      orSeparatorText: 'OU',
-      toastSuccessMessageSent: 'Message envoyé avec succès !',
-      toastErrorFailedToSend: "Échec de l'envoi du message.",
-      toastErrorUnexpected: "Une erreur inattendue s'est produite.",
-      toastErrorDetails: "Détails de l'erreur:",
-      toastErrorValidationFailed: 'Validation du formulaire échouée.',
-    },
-    projectDetailPage: {
-      backToProjects: 'Retour aux Projets',
-      categoryLabel: 'Catégorie :',
-      dateLabel: 'Date :',
-      aboutTitle: 'À propos de ce projet',
-      keyFeaturesTitle: 'Fonctionnalités Clés',
-      galleryTitle: 'Galerie',
-      challengesTitle: 'Défis Rencontrés',
-      learningsTitle: 'Leçons Apprises',
-      visitProjectButton: 'Visiter le Projet',
-      viewCodeButton: 'Voir le Code',
-    },
-    projectsPage: {
-      title: 'Mes Projets',
-      metaTitle: 'Mes Projets | Portfolio',
-      metaDescription: 'Découvrez tous les projets.',
-      noProjects: 'Aucun projet à afficher pour le moment.',
-      noProjectsDescription:
-        "Il semble que vous n'ayez pas encore de projets à afficher.",
-    },
-    notFoundPage: {
-      pageTitle: 'Page Non Trouvée',
-      title: 'Oups ! Page Non Trouvée',
-      message:
-        "Désolé, la page que vous recherchez ne semble pas exister. Vérifiez l'URL ou retournez à la page d'accueil.",
-      homeLink: "Retourner à l'Accueil",
-    },
-
-    tipsPage: {
-      metaTitle: 'Astuces de Développement',
-      metaDescription:
-        'Découvrez des astuces et conseils rapides sur le développement web et la cloud computing.',
-      description:
-        'Découvrez des astuces et conseils rapides sur le développement web et la cloud computing.',
-      title: 'Nos Dernières Astuces',
-      noTips: 'Aucune astuce à afficher pour le moment.',
-      readTip: "Lire l'astuce",
-      backToList: 'Retour à la liste des astuces',
-      featuredTips: 'Astuces recommandées',
-      allTips: 'Toutes les astuces',
-      tipsAvailable: 'astuces disponibles',
-      tipAvailable: 'astuce disponible',
-      editOnGithub: 'Modifier sur GitHub',
-    },
-    zodErrors: {
-      // Common errors
-      invalid_type: 'Type invalide.',
-      invalid_type_received_undefined: 'Ce champ est requis.', // For required fields (fallback)
-      required_field_custom: 'Le champ {fieldName} est requis.',
-      // String errors
-      too_small_string_minimum: 'Doit contenir au moins {minimum} caractères.',
-      too_big_string_maximum: 'Ne doit pas dépasser {maximum} caractères.',
-      invalid_string_email: 'Adresse e-mail invalide.',
-      invalid_string_url: 'URL invalide.',
-      invalid_string_uuid: 'UUID invalide.',
-      // You can add more specific messages as needed
-    },
-  },
   en: {
     projectsContent: {
       sampleProject: {
@@ -334,6 +121,7 @@ export const ui = {
       readingTimeSuffix: 'min read',
       relatedPostsTitle: 'Continue Reading',
       readMore: 'Read more',
+      editOnGithub: 'Edit on GitHub',
     },
     toc: {
       title: 'Table of Contents',
@@ -428,6 +216,197 @@ export const ui = {
       // You can add more specific messages as needed
     },
   },
+  ko: {
+    projectsContent: {
+      sampleProject: {
+        title: '샘플 프로젝트',
+        description: '이것은 템플릿을 위한 샘플 프로젝트입니다.',
+        imageAltText: '샘플 프로젝트를 위한 이미지',
+        categoryText: '웹 애플리케이션',
+        dateText: '2025년 1월',
+        detailedDescription:
+          '프로젝트 상세 페이지의 콘텐츠 구조를 보여주는 샘플 프로젝트에 대한 자세한 설명입니다.',
+        keyFeatures: {
+          responsiveDesign: {
+            title: '반응형 디자인',
+            description: '프로젝트가 모든 화면 크기에 맞게 조정됩니다.',
+          },
+          contentManagement: {
+            title: '쉬운 콘텐츠 관리',
+            description:
+              '마크다운 파일이나 CMS를 통해 쉽게 콘텐츠를 관리할 수 있습니다.',
+          },
+        },
+        galleryImages: {},
+        challenges: '이 샘플 프로젝트를 만들면서 겪은 어려움에 대한 설명입니다.',
+        learnings: '이 샘플 프로젝트에서 얻은 교훈에 대한 설명입니다.',
+      },
+    },
+    skillsContent: {
+      frontendDevelopment: {
+        title: '프론트엔드 개발',
+        description: '상호작용적이고 고성능의 사용자 인터페이스를 제작합니다.',
+      },
+      backendDevelopment: {
+        title: '백엔드 개발',
+        description: '견고한 서버 로직과 API를 구축합니다.',
+      },
+      uiUxDesign: {
+        title: 'UI/UX 디자인',
+        description: '직관적이고 심미적인 사용자 경험을 디자인합니다.',
+      },
+      devOps: {
+        title: 'DevOps',
+        description: '개발 및 배포 프로세스를 자동화합니다.',
+      },
+    },
+    site: {
+      title: '나의 멋진 템플릿',
+      description: '프로젝트를 시작하기 위한 현대적이고 성능 좋은 Astro 템플릿입니다.',
+    },
+    nav: {
+      home: '홈',
+      blog: '블로그',
+      contact: '연락처',
+      projects: '프로젝트',
+    },
+    footer: {
+      rights: '모든 권리 보유.',
+    },
+    homePage: {
+      pageTitle: '홈 | YOUR_NAME - 풀스택 개발자',
+      pageDescription:
+        '혁신적인 웹 경험을 만드는 것을 좋아하는 풀스택 개발자 YOUR_NAME의 포트폴리오에 오신 것을 환영합니다.',
+      heroGreeting: '안녕하세요, YOUR_NAME입니다',
+      heroSubtitlePart1: '풀스택 개발자',
+      heroSubtitlePart2: 'UI/UX 애호가',
+      heroIntroduction: '여기에 소개를 추가하세요.',
+      heroViewWorkButton: '내 작업 보기',
+      heroContactButton: '연락하기',
+      heroImageAlt: 'YOUR_NAME 또는 개발 컨셉을 나타내는 일러스트',
+      featuredProjectsTitle: '최신 프로젝트 3개',
+      featuredProjectsDescription:
+        '최근에 작업한 몇 가지 프로젝트입니다. 자유롭게 둘러보세요!',
+      projectCardViewProject: '프로젝트 보기',
+      projectCardViewCode: '코드 보기',
+      imageNotAvailable: '이미지를 사용할 수 없습니다',
+      mySkillsTitle: '내 기술',
+      mySkillsDescription:
+        '제 작업과 열정을 정의하는 전문성과 능력을 탐색해보세요.',
+    },
+    blogPage: {
+      pageTitle: '나의 기술 블로그',
+      pageDescription:
+        '웹 개발, 소프트웨어 아키텍처, 신기술에 대한 기사와 생각.',
+      title: '나의 기술 블로그',
+      description:
+        '웹 개발, 소프트웨어 아키텍처, 신기술에 대한 기사와 생각.',
+      comingSoon: '블로그 게시물이 곧 여기에 나타날 것입니다. 나중에 다시 확인해주세요!',
+      heroImageAlt: '기사 히어로 이미지: ',
+      publishedOn: '게시일: ',
+      readMore: '더 읽기',
+      readingTimeSuffix: '분 분량',
+      searchPlaceholder: '기사 검색...',
+      filterByTagButtonLabel: '태그로 필터링',
+      noTagFound: '태그를 찾을 수 없습니다.',
+      selectTagCommandPlaceholder: '태그 검색...',
+      allTagsLabel: '모든 태그',
+      noPostsFound: '게시물을 찾을 수 없습니다.',
+    },
+    blogPost: {
+      publishedOn: '게시일: ',
+      updatedOn: '업데이트 날짜: ',
+      heroImageAlt: '기사 히어로 이미지: ',
+      backToList: '블로그 목록으로 돌아가기',
+      readingTimeSuffix: '분 분량',
+      relatedPostsTitle: '계속 읽기',
+      readMore: '더 읽기',
+      editOnGithub: 'GitHub에서 수정하기',
+    },
+    toc: {
+      title: '목차',
+    },
+    contactPage: {
+      pageTitle: '연락하기',
+      pageDescription:
+        '당신의 프로젝트, 잠재적인 협업에 대해 이야기하거나 기술에 대해 이야기 나눠봐요!',
+      title: '연락하기',
+      description:
+        '당신의 프로젝트, 잠재적인 협업에 대해 이야기하거나 기술에 대해 이야기 나눠봐요!',
+      formTitle: '메시지 보내기',
+      firstNameLabel: '이름',
+      lastNameLabel: '성',
+      emailLabel: '이메일',
+      messageLabel: '메시지',
+      sendButtonLabel: '보내기',
+      firstNamePlaceholder: '이름을 입력하세요',
+      lastNamePlaceholder: '성을 입력하세요',
+      emailPlaceholder: '이메일 주소를 입력하세요',
+      messagePlaceholder: '메시지를 입력하세요...',
+      calendarTitle: '회의 예약',
+      calendarDescription:
+        '실시간으로 대화하고 싶으신가요? 제 캘린더에서 직접 시간을 예약하세요.',
+      calendarButtonLabel: '가능한 시간 보기',
+      calendarLinkLabel: '내 캘린더 보기',
+      calendarPlaceHolder: 'Google 캘린더와의 통합이 곧 제공될 예정입니다...',
+      orSeparatorText: '또는',
+      toastSuccessMessageSent: '메시지를 성공적으로 보냈습니다!',
+      toastErrorFailedToSend: '메시지 전송에 실패했습니다.',
+      toastErrorUnexpected: '예상치 못한 오류가 발생했습니다.',
+      toastErrorDetails: '오류 상세:',
+      toastErrorValidationFailed: '양식 유효성 검사에 실패했습니다.',
+    },
+    projectDetailPage: {
+      backToProjects: '프로젝트로 돌아가기',
+      categoryLabel: '카테고리:',
+      dateLabel: '날짜:',
+      aboutTitle: '이 프로젝트에 대하여',
+      keyFeaturesTitle: '주요 기능',
+      galleryTitle: '갤러리',
+      challengesTitle: '과제',
+      learningsTitle: '배운 점',
+      visitProjectButton: '프로젝트 방문',
+      viewCodeButton: '코드 보기',
+    },
+    projectsPage: {
+      title: '내 프로젝트',
+      metaTitle: '내 프로젝트 | 포트폴리오',
+      metaDescription: '모든 프로젝트를 확인해보세요.',
+      noProjects: '현재 표시할 프로젝트가 없습니다.',
+      noProjectsDescription: '아직 표시할 프로젝트가 없는 것 같습니다.',
+    },
+    notFoundPage: {
+      pageTitle: '페이지를 찾을 수 없음',
+      title: '이런! 페이지를 찾을 수 없습니다',
+      message:
+        '죄송합니다, 찾고 계신 페이지가 존재하지 않는 것 같습니다. URL을 확인하거나 홈페이지로 돌아가세요.',
+      homeLink: '홈페이지로 돌아가기',
+    },
+    tipsPage: {
+      metaTitle: '개발 팁',
+      metaDescription: '웹 개발 및 클라우드 컴퓨팅에 대한 빠른 팁과 조언을 찾아보세요.',
+      description: '웹 개발 및 클라우드 컴퓨팅에 대한 빠른 팁과 조언을 찾아보세요.',
+      title: '최신 팁',
+      noTips: '현재 표시할 팁이 없습니다.',
+      readTip: '팁 읽기',
+      backToList: '목록으로 돌아가기',
+      featuredTips: '추천 팁',
+      allTips: '모든 팁',
+      tipsAvailable: '개의 팁 사용 가능',
+      tipAvailable: '개의 팁 사용 가능',
+      editOnGithub: 'GitHub에서 수정하기',
+    },
+    zodErrors: {
+      invalid_type: '유효하지 않은 타입입니다.',
+      invalid_type_received_undefined: '이 필드는 필수입니다.',
+      required_field_custom: '{fieldName} 필드는 필수입니다.',
+      too_small_string_minimum: '최소 {minimum}자 이상이어야 합니다.',
+      too_big_string_maximum: '최대 {maximum}자를 초과할 수 없습니다.',
+      invalid_string_email: '유효하지 않은 이메일 주소입니다.',
+      invalid_string_url: '유효하지 않은 URL입니다.',
+      invalid_string_uuid: '유효하지 않은 UUID입니다.',
+    },
+  },
 } as const;
 
 export const getLanguageName = (lang: LanguageCode) => languages[lang];
@@ -450,16 +429,24 @@ export function useTranslations<F extends FeatureType>(
 
   return function t(key: string): string {
     // Safely access the translation, falling back to default language if necessary
-    const featureTranslations = ui[currentLanguage]?.[feature];
-    if (featureTranslations && key in featureTranslations) {
-      return featureTranslations[
-        key as keyof typeof featureTranslations
-      ] as string;
+    const featureTranslations = ui[currentLanguage]?.[feature]; // 옵셔널 체이닝 추가
+    if (featureTranslations) {
+      const keyTyped = key as keyof typeof featureTranslations;
+      if (keyTyped in featureTranslations) {
+        return featureTranslations[keyTyped] as string;
+      }
     }
 
     // Fallback to default language
-    return ui[defaultLanguage][feature][
-      key as keyof (typeof ui)[typeof defaultLanguage][F]
-    ] as string;
+    const defaultFeatureTranslations = ui[defaultLanguage]?.[feature]; // 옵셔널 체이닝 추가
+    if (defaultFeatureTranslations) {
+      const keyInDefaultTyped = key as keyof typeof defaultFeatureTranslations;
+      if (keyInDefaultTyped in defaultFeatureTranslations) {
+        return defaultFeatureTranslations[keyInDefaultTyped] as string;
+      }
+    }
+
+    // As a last resort, return the key itself if no translation is found
+    return key;
   };
 }
