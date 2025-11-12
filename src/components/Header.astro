@@ -5,6 +5,7 @@ import { type LanguageSelectorItem } from '@/lib/i18n-utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { LanguageSelector } from './LanguageSelector.tsx';
 import Logo from './Logo.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   languagesForSelector: Array<LanguageSelectorItem>;
@@ -40,6 +41,7 @@ const currentLocale =
         languages={languagesForSelector}
         client:load
       />
+      <ThemeToggle />
     </div>
   </nav>
 </header>
