@@ -21,25 +21,27 @@ const currentLocale =
 >
   <nav class="mx-auto px-4 max-w-screen-2xl flex justify-between items-center">
     <Logo />
-    <div class="flex items-center gap-x-5">
-      {
-        navItems.map((link) => (
-          <a
-            href={getRelativeLocaleUrl(currentLocale, link.href)}
-            class="font-medium text-muted-foreground transition-colors hover:text-foreground relative group"
-          >
-            {link.label}
-            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-          </a>
-        ))
-      }
-    </div>
-    <div class="flex items-center gap-x-3">
-      <LanguageSelector
-        currentLocale={currentLocale}
-        languages={languagesForSelector}
-        client:load
-      />
+    <div class="nav group1 flex items-center gap-x-8">
+      <div class="flex items-center gap-x-5">
+        {
+          navItems.map((link) => (
+            <a
+              href={getRelativeLocaleUrl(currentLocale, link.href)}
+              class="font-medium text-muted-foreground transition-colors hover:text-foreground relative group"
+            >
+              {link.label}
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </a>
+          ))
+        }
+      </div>
+      <div class="flex items-center gap-x-3">
+        <LanguageSelector
+          currentLocale={currentLocale}
+          languages={languagesForSelector}
+          client:load
+        />
+      </div>
     </div>
   </nav>
 </header>

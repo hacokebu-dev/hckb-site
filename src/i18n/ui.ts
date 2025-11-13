@@ -67,7 +67,8 @@ export const ui = {
       home: 'Home',
       blog: 'Blog',
       contact: 'Contact',
-      projects: 'Projects',
+      article: 'Article',
+      project: 'Project',
     },
     footer: {
       rights: 'All rights reserved.',
@@ -267,8 +268,9 @@ export const ui = {
     nav: {
       home: '홈',
       blog: '블로그',
-      contact: '연락처',
-      projects: '프로젝트',
+      contact: '연락',
+      project: '프로젝트',
+      article: '글',
     },
     footer: {
       rights: '모든 권리 보유.',
