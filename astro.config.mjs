@@ -54,6 +54,13 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    // Treat .riv files as static assets so Vite doesn't try to parse them as JS
+    assetsInclude: ['**/*.riv'],
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
   },
 
   adapter: vercel(),
