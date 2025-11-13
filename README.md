@@ -69,7 +69,7 @@ Welcome! This is a feature-rich Astro template designed to help you kickstart yo
 ### Portfolio Projects
 
 - The template includes a sample project. To add your own projects or modify the sample:
-  - Define your project data in `src/features/projects/service.ts` (see the `projectsData` array).
+  - Define your project data in `src/features/project/service.ts` (see the `projectsData` array).
   - Add corresponding translations (title, description, details, etc.) in `src/i18n/ui.ts` under the `projectsContent` section for each language.
   - Ensure project images (like `imageUrl`) are correctly imported as `ImageMetadata` objects in `service.ts` if using Astro's optimized images, or place them in `public/` and use string paths.
 
@@ -108,7 +108,7 @@ All commands are run from the root of the project (using `bun` by default):
 │   │       ├── layouts/      # Layouts for blog pages
 │   │       └── ...           # Other blog-related files (types, screens)
 │   │
-│   │   └── projects/         # (Example) Portfolio projects feature - CUSTOMIZE THIS
+│   │   └── project/         # (Example) Portfolio projects feature - CUSTOMIZE THIS
 │   │       └── ...
 │   │
 │   ├── i18n/                 # Internationalization configuration

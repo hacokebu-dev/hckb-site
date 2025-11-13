@@ -31,7 +31,7 @@ export function LanguageSelector({
       const pathname = window.location.pathname;
 
       // Check if we're on a detail page (blog or tips)
-      const detailPageMatch = pathname.match(/^(\/en)?\/(blog|tips)\/[^\/]+/);
+      const detailPageMatch = pathname.match(/^(\/en)?\/(article|tips)\/[^\/]+/);
 
       if (detailPageMatch) {
         const [, langPrefix, section] = detailPageMatch;
