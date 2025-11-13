@@ -108,12 +108,12 @@ const languagesForSelector: Array<LanguageSelectorItem> =
   </head>
   <body class="h-[100dvh] bg-background font-sans antialiased flex flex-col">
     {/* Tailwind classes for the body */}
-    <header class="hidden md:block">
+    <div class="hidden md:block">
       <Header languagesForSelector={languagesForSelector} navItems={navItems} />
-    </header>
+    </div>
 
     <main
-      class="container mx-auto px-8 py-8 flex-1 max-w-screen-2xl pb-20 md:pb-8"
+      class="container mx-auto px-8 pt-8 flex-1 max-w-screen-2xl pb-20 md:pt-20 md:pb-8"
     >
       <slot />
     </main>
