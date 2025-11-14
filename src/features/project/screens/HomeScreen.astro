@@ -48,54 +48,48 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-12 md:py-16">
-  <div class="grid md:grid-cols-2 gap-12 items-center justify-between">
-    <!-- Hero Text Column -->
-    <div class="text-center md:text-left">
-      <h1
-        class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
-      >
-        {heroGreeting}
-      </h1>
-      <p class="text-2xl md:text-3xl font-medium text-muted-foreground mb-2">
-        <span>{heroSubtitlePart1}</span>
-        <span class="text-primary"> | </span>
-        <span>{heroSubtitlePart2}</span>
-      </p>
-      <p class="text-lg text-muted-foreground mb-8">
-        {heroIntroduction}
-      </p>
-      <div
-        class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-      >
-        <a
-          href={getRelativeLocaleUrl(lang, '/project')}
-          class={buttonVariants({ variant: 'default', size: 'lg' })}
-        >
-          <Dumbbell className="mr-2 size-4" />
-          {heroViewWorkButton}
-        </a>
-        <a
-          href={getRelativeLocaleUrl(lang, '/contact')}
-          class={buttonVariants({ variant: 'outline', size: 'lg' })}
-        >
-          <Calendar className="mr-2 size-4" />
-          {heroContactButton}
-        </a>
-      </div>
-    </div>
+<!-- Hero Image Section - Full Width -->
+<section class="w-full bg-muted flex items-center justify-center py-16 md:py-24">
+  <div class="w-full max-w-md aspect-square">
+    <LottieAnimation
+      client:load
+      src="/img/robot.lottie"
+      className="w-full h-full"
+    />
+  </div>
+</section>
 
-    <!-- Hero Image (Placeholder for now) -->
-    <div class="md:text-center">
-      <div
-        class="md:w-[600px] w-full aspect-square bg-muted rounded-lg shadow-xl overflow-hidden"
+<!-- Hero Text Section -->
+<section class="py-12 md:py-16">
+  <div class="text-center max-w-3xl mx-auto">
+    <h1
+      class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
+    >
+      {heroGreeting}
+    </h1>
+    <p class="text-2xl md:text-3xl font-medium text-muted-foreground mb-2">
+      <span>{heroSubtitlePart1}</span>
+      <span class="text-primary"> | </span>
+      <span>{heroSubtitlePart2}</span>
+    </p>
+    <p class="text-lg text-muted-foreground mb-8">
+      {heroIntroduction}
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={getRelativeLocaleUrl(lang, '/project')}
+        class={buttonVariants({ variant: 'default', size: 'lg' })}
       >
-        <LottieAnimation
-          client:load
-          src="/img/robot.lottie"
-          className="h-full w-full"
-        />
-      </div>
+        <Dumbbell className="mr-2 size-4" />
+        {heroViewWorkButton}
+      </a>
+      <a
+        href={getRelativeLocaleUrl(lang, '/contact')}
+        class={buttonVariants({ variant: 'outline', size: 'lg' })}
+      >
+        <Calendar className="mr-2 size-4" />
+        {heroContactButton}
+      </a>
     </div>
   </div>
 </section>
