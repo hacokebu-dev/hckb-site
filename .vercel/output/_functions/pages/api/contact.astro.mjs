@@ -1,5 +1,5 @@
 import { c as contactFormSchema } from '../../chunks/type_D1NHzS_B.mjs';
-import { a as ui } from '../../chunks/ui_CwVX7bvz.mjs';
+import { a as ui } from '../../chunks/ui_hrixv31S.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const prerender = false;

@@ -59,7 +59,8 @@ const ui = {
       home: "Home",
       blog: "Blog",
       contact: "Contact",
-      projects: "Projects"
+      article: "Article",
+      project: "Project"
     },
     footer: {
       rights: "All rights reserved."
@@ -159,9 +160,9 @@ const ui = {
       noProjectsDescription: "It seems that you don't have any projects to display at the moment."
     },
     notFoundPage: {
-      pageTitle: "Page Not Found",
-      title: "Oops! Page Not Found",
-      message: "Sorry, the page you are looking for does not seem to exist. Check the URL or return to the homepage.",
+      pageTitle: "😳 Oops...",
+      title: "Page Not Found",
+      message: "Check the URL or return to the homepage.",
       homeLink: "Return to Homepage"
     },
     tipsPage: {
@@ -242,8 +243,9 @@ const ui = {
     nav: {
       home: "홈",
       blog: "블로그",
-      contact: "연락처",
-      projects: "프로젝트"
+      contact: "연락",
+      project: "프로젝트",
+      article: "글"
     },
     footer: {
       rights: "모든 권리 보유."
@@ -343,10 +345,10 @@ const ui = {
       noProjectsDescription: "아직 표시할 프로젝트가 없는 것 같습니다."
     },
     notFoundPage: {
-      pageTitle: "페이지를 찾을 수 없음",
-      title: "이런! 페이지를 찾을 수 없습니다",
-      message: "죄송합니다, 찾고 계신 페이지가 존재하지 않는 것 같습니다. URL을 확인하거나 홈페이지로 돌아가세요.",
-      homeLink: "홈페이지로 돌아가기"
+      pageTitle: "😳 이런...",
+      title: "페이지를 찾지 못했어요",
+      message: "URL을 다시 확인해 주세요.",
+      homeLink: "첫 페이지로"
     },
     tipsPage: {
       metaTitle: "개발 팁",

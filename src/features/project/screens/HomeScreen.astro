@@ -6,9 +6,8 @@ import type { LanguageCode } from '@/i18n/ui';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { Calendar, Dumbbell } from 'lucide-react';
 
-import RiveAnimation from '@/components/RiveAnimation.tsx';
+import LottieAnimation from '@/components/LottieAnimation.tsx';
 import { Image } from 'astro:assets';
-import gameRiv from '@/assets/game.riv';
 import FeaturedProjectPreview from '../components/FeaturedProjectPreview.astro';
 import type { TranslatedProject, TranslatedSkill } from '../type';
 
@@ -91,10 +90,10 @@ const {
       <div
         class="md:w-[600px] w-full h-92 bg-muted rounded-lg shadow-xl overflow-hidden"
       >
-        <RiveAnimation
+        <LottieAnimation
           client:load
-          src={gameRiv}
-          className="h-full w-full object-cover"
+          src="/img/lt.json"
+          className="h-full w-full"
         />
       </div>
     </div>
