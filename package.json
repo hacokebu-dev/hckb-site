@@ -13,6 +13,7 @@
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "4.3.0",
     "@astrojs/vercel": "^8.1.4",
+    "@dotlottie/dotlottie-js": "^1.6.0",
     "@hookform/resolvers": "^5.0.1",
     "@lottiefiles/dotlottie-react": "^0.17.7",
     "@nanostores/react": "^1.0.0",
